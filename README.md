@@ -24,7 +24,7 @@ Both tuned Naive Bayes models perform statistically indistinguishably from a maj
 
 ## Requirements
 
-```
+```text
 pandas
 numpy
 matplotlib
