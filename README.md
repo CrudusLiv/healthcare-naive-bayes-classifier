@@ -4,14 +4,14 @@ BCS102 (Fundamentals of Artificial Intelligence) assignment: predicting patient 
 
 ## Contents
 
-- `BCS102_Healthcare_NaiveBayes.ipynb` — main notebook: data loading, EDA, preprocessing, model training, and evaluation
-- `healthcare_dataset.csv` — raw dataset (55,500 rows, 15 features)
-- `05 Assignment-Question-BCS102-May26-Final.docx` — assignment brief
+- `BCS102_Healthcare_NaiveBayes.ipynb`: main notebook covering data loading, EDA, preprocessing, model training, and evaluation
+- `healthcare_dataset.csv`: raw dataset (55,500 rows, 15 features)
+- `05 Assignment-Question-BCS102-May26-Final.docx`: assignment brief
 
 ## What the notebook does
 
 1. **Load & describe** the raw dataset (15 features, 55,500 rows).
-2. **Clean & type-convert**: strip column names, cast dates to `datetime64`, cast nominal fields to `category`; remove 534 exact-duplicate rows (54,966 rows remain). A categorical value-validation check then asserts every categorical column contains only its documented values (e.g. `Gender` is exactly `{Male, Female}`, with no unexpected categories or blank/whitespace-only entries) — proving the data is clean, not just non-null.
+2. **Clean & type-convert**: strip column names, cast dates to `datetime64`, cast nominal fields to `category`; remove 534 exact-duplicate rows (54,966 rows remain). A categorical value-validation check then asserts every categorical column contains only its documented values (e.g. `Gender` is exactly `{Male, Female}`, with no unexpected categories or blank/whitespace-only entries), proving the data is clean, not just non-null.
 3. **EDA**: target/feature distributions, target-vs-feature breakdowns, correlation heatmap, IQR-based outlier check, and formal feature-target association tests (ANOVA for numeric features, Cramer's V for categorical features).
 4. **Feature engineering & preprocessing**: derive `Length of Stay` from admission/discharge dates, drop identifier columns (`Name`, `Doctor`, `Hospital`, `Room Number`), label-encode categorical features, scale numeric features, and split 80/20 (stratified) into train/test sets.
 5. **Model training**: `GaussianNB` and `CategoricalNB`, each tuned via 5-fold stratified cross-validation (`GridSearchCV`).
